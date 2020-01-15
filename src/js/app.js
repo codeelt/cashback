@@ -3,6 +3,9 @@ const purchases = {
     increased: [3000, 1500],
     special: [6000],
 }
+
+const cashbackLimit = 3000;
+
 let sumPurchasesRegular = 0;
 for (const purchaseRegular of purchases.regular) {
     sumPurchasesRegular += purchaseRegular;
@@ -22,9 +25,10 @@ cashbackSpecial = sumPurchasesSpecial *0.3;
 
 let cashback = cashbackIncreased + cashbackRegular + cashbackSpecial;
 
-if (cashback >= 3000){
-    cashback = 3000;
-    console.log(cashback);
+
+
+if (cashback > cashbackLimit){
+    console.log(cashbackLimit);
 }
 else{
     console.log(cashback);
